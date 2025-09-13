@@ -1,5 +1,4 @@
 <?php
-    $str=$_GET['str'];
 function length($str){
     $count=0;
     $i=0;
@@ -20,15 +19,31 @@ function vovels($str){
     }
     echo "<br>Total vovels are =".$count;
 }
-$str2=strtolower($str);
-echo"String = ".$str2;
-$str2=str_pad($str,5,'*');
-echo"<br>pad string = ".$str2;
-$str2=ltrim($str);
-echo "<br>Trimmed string =".$str2;
-$str2=strrev($str);
-echo "<br>reverse = ".$str2;
-
-length($str);
-vovels($str);
+$str=$_GET['str'];
+$case=$_GET['case'];
+switch($case){
+    case "a":
+            length($str);
+            break;
+    case "b":
+            vovels($str);
+            break;
+    case "c":
+            $str2=strtolower($str);
+            $titleCase = ucwords($str2);
+            echo $titleCase; 
+            break;
+    case "d":
+            $str2=str_pad($str,5,'*');
+            echo"<br>pad string = ".$str2;
+            break;
+    case "e":
+            $str2=ltrim($str);
+            echo "<br>Trimmed string =".$str2;
+            break;
+    case "f":
+            $str2=strrev($str);
+            echo "<br>reverse = ".$str2;            
+            break;
+}
 ?>
