@@ -24,10 +24,21 @@ function facto($B){
 
 $A=$_GET['A'];
 $B=$_GET['B'];
-domod($A,$B);
-calpower($A,$B);
-calsum($A);
-facto($B);
+$case=$_GET['operation'];
+switch($case){
+    case "a":  
+            domod($A,$B); 
+            break;
+    case "b":
+            calpower($A,$B);
+            break;
+    case "c":
+            calsum($A);
+            break;
+    case "d":
+            facto($B);
+            break;
+}
 
 ?>
 
